@@ -21,4 +21,8 @@ clean:
 
 .PHONY: inter
 inter: debug
-	bin/turing < inter.json
+	bin/turing < tests/inter.json
+
+.PHONY: AABB
+AABB: debug
+	bin/turing < tests/AABB.json
