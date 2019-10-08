@@ -18,31 +18,31 @@
         "A": {
           "move": "RIGHT",
           "write": "A",
-          "state": "QA"
+          "become": "QA"
         }
       },
       "QA": {
         "A": {
           "move": "RIGHT",
           "write": "A",
-          "state": "QA"
+          "become": "QA"
         },
         "B": {
           "move": "RIGHT",
           "write": "B",
-          "state": "QB"
+          "become": "QB"
         }
       },
       "QB": {
         "B": {
           "move": "RIGHT",
           "write": "B",
-          "state": "QB"
+          "become": "QB"
         },
         " ": {
           "move": "LEFT",
           "write": " ",
-          "state": "QF"
+          "become": "QF"
         }
       }
     },

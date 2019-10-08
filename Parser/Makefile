@@ -1,4 +1,4 @@
-turing: lex.yy.c turing.tab.c turing.tab.h
+bin/turing: lex.yy.c turing.tab.c turing.tab.h
 	 g++ -o $@ turing.tab.c lex.yy.c -lfl -lm
 
 turing.tab.c: turing.y
