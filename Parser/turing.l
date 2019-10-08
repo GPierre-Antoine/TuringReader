@@ -8,7 +8,7 @@
 
 #include "turing.tab.h"
 
-#ifdef YYDEBUG
+#if defined(LLDEBUG)
     #define yield(expr) std::cout << #expr << std::endl; return expr
 #else
     #define yield(expr) return expr
