@@ -18,7 +18,6 @@ void yyerror (char const *s)
 %token STATE_LIST INITIAL_STATE FINAL_STATE_LIST ALPHABET EMPTY ENTRY TRANSISIONS VALID INVALID
 %token MOVE WRITE BECOME
 %token LEFT RIGHT STAY
-%token OBJECT LIST
 %token STRING
 %token EOL
 
@@ -26,6 +25,19 @@ void yyerror (char const *s)
 
 expression:
  | expression EOL
+ | expression turing_machine_set EOL
+
+turing_machine_set: BRACE_OPEN turing_machine_list BRACE_CLOSE
+
+turing_machine_list: named_turing_machine COMMA turing_machine_list
+| named_turing_machine
+
+named_turing_machine: machine_name COLON turing_machine { std::cout << $1 << std::endl; }
+
+machine_name: STRING
+
+turing_machine: "turing machine"
+
 
 %%
 
