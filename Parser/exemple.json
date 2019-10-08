@@ -1,0 +1,52 @@
+{
+  "A Then B": {
+    "states": [
+      "Q0",
+      "QA",
+      "QB",
+      "QF"
+    ],
+    "initial": "Q0",
+    "final": [
+      "QF"
+    ],
+    "alphabet": "AB ",
+    "empty": " ",
+    "entry": "AB",
+    "transitions": {
+      "Q0": {
+        "A": {
+          "move": "RIGHT",
+          "write": "A",
+          "state": "QA"
+        }
+      },
+      "QA": {
+        "A": {
+          "move": "RIGHT",
+          "write": "A",
+          "state": "QA"
+        },
+        "B": {
+          "move": "RIGHT",
+          "write": "B",
+          "state": "QB"
+        }
+      },
+      "QB": {
+        "B": {
+          "move": "RIGHT",
+          "write": "B",
+          "state": "QB"
+        },
+        " ": {
+          "move": "LEFT",
+          "write": " ",
+          "state": "QF"
+        }
+      }
+    },
+    "valid": "AAABBB",
+    "invalid": "BA"
+  }
+}
