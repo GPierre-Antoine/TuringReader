@@ -31,7 +31,7 @@ void yyerror (char const *s)
 
 %%
 
-expression: turing_machine_set END
+expression: turing_machine_set END { YYACCEPT; }
 
 turing_machine_set: BRACE_OPEN turing_machine_list BRACE_CLOSE
 
