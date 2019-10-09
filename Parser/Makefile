@@ -23,7 +23,7 @@ bin:
 
 .PHONY: clean
 clean:
-	gitRemove -f
+	rm -rf build/ bin/
 
 .PHONY: inter
 inter: debug
