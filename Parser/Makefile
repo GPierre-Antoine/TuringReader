@@ -1,19 +1,25 @@
 
 .PHONY: debug
-debug:lex.yy.c turing.tab.c turing.tab.h
-	mkdir -p bin && g++ -o bin/turing turing.tab.c lex.yy.c -lfl -DYYDEBUG=1
+debug:bin build/lex.yy.c build/turing.tab.c build/turing.tab.h
+	g++ -o bin/turing build/turing.tab.c build/lex.yy.c -lfl -DYYDEBUG=1
 
 bin/turing: lex.yy.c turing.tab.c turing.tab.h
-	mkdir -p bin && g++ -o $@ turing.tab.c lex.yy.c -lfl
+	mkdir -p bin && g++ -o $@ turing.tab.c build/lex.yy.c -lfl
 
-turing.tab.c: turing.y
-	bison -d turing.y
+build/turing.tab.c: build turing.y
+	bison -o $@ -d turing.y
 
-turing.tab.h: turing.y
-	bison -td turing.y
+build/turing.tab.h: build turing.y
+	bison -o $@ -td turing.y
 
-lex.yy.c: turing.l
-	flex turing.l
+build/lex.yy.c: build turing.l
+	flex -o $@ turing.l
+
+build:
+	mkdir build
+
+bin:
+	mkdir bin
 
 .PHONY: clean
 clean:
@@ -26,3 +32,4 @@ inter: debug
 .PHONY: AABB
 AABB: debug
 	bin/turing < tests/AABB.json
+
