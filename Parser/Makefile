@@ -1,10 +1,10 @@
 
 .PHONY: debug
 debug:bin build/lex.yy.c build/turing.tab.c build/turing.tab.h
-	g++ -o bin/turing build/turing.tab.c build/lex.yy.c -lfl -DYYDEBUG=1
+	g++ -o bin/turing build/turing.tab.c build/lex.yy.c -DYYDEBUG=1
 
 bin/turing: lex.yy.c turing.tab.c turing.tab.h
-	mkdir -p bin && g++ -o $@ turing.tab.c build/lex.yy.c -lfl
+	mkdir -p bin && g++ -o $@ turing.tab.c build/lex.yy.c
 
 build/turing.tab.c: build turing.y
 	bison -o $@ -d turing.y

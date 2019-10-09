@@ -19,6 +19,7 @@
 QUOTE    \"
 NOQUOTE [^\"]*
 FLEX_STRING        {QUOTE}{NOQUOTE}{QUOTE}
+%option noyywrap
 %%
 
 "{"                                {  yield(BRACE_OPEN); }
