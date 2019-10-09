@@ -1,4 +1,8 @@
 
+.PHONY: inter
+test: debug
+	bin/turing < tests/test.json
+
 .PHONY: debug
 debug:bin build/lex.yy.c build/turing.tab.c build/turing.tab.h
 	g++ -o bin/turing build/turing.tab.c build/lex.yy.c -DYYDEBUG=1
@@ -24,12 +28,4 @@ bin:
 .PHONY: clean
 clean:
 	rm -rf build/ bin/
-
-.PHONY: inter
-inter: debug
-	bin/turing < tests/inter.json
-
-.PHONY: AABB
-AABB: debug
-	bin/turing < tests/AABB.json
 
