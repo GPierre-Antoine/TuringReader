@@ -2,4 +2,5 @@
 *.tab.c
 *.tab.h
 a.out
-Parser/bin/*
+bin/
+build/
