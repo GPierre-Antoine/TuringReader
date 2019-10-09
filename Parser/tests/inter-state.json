@@ -1,0 +1,5 @@
+{
+  "A Then B": {"state":"TM 1" },
+  "OTHER": { "state":"TM 2" },
+  "Last": { "state":"TM 3" }
+}
