@@ -1,5 +1,5 @@
 {
-  "A Then B": { "turing machine 1" },
-  "OTHER": { "turing machine 2" },
-  "Last": { "turing machine 3" }
+  "A Then B": { "states":"turing machine 1" },
+  "OTHER": { "states":"turing machine 2" },
+  "Last": { "states":"turing machine 3" }
 }

@@ -41,7 +41,7 @@ turing_machine_list: named_turing_machine COMMA turing_machine_list
 named_turing_machine: machine_name COLON turing_machine { std::cout << "Parsing Turing Machine " << $1 << " avec string "  << $3 << std::endl; }
 
 machine_name: STRING
-turing_machine: STRING
+turing_machine: BRACE_OPEN STATE_LIST COLON STRING BRACE_CLOSE { $$ = $4 ;}
 
 
 %%
