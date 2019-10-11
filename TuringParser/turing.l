@@ -6,7 +6,7 @@
 #include <iostream>
 #include <stdexcept>
 
-#include "turing.tab.h"
+#include "turingparser.hpp"
 
 #if defined(LLDEBUG)
     #define yield(expr) std::cout << #expr << std::endl; return expr

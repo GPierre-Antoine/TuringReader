@@ -6,11 +6,10 @@
 #include "turingparser.hpp"
 
 
-int main(int argc, char **argv)
+int main()
 {
     try
     {
-        freopen("test.json", "r", stdin);
         yyparse();
     }
     catch (const std::runtime_error & e)

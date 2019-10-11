@@ -27,8 +27,6 @@ void yyerror (char const *s)
 %token STRING
 %token END
 
-%define parse.trace
-
 %%
 
 expression: turing_machine_set END { YYACCEPT; }
@@ -41,20 +39,7 @@ turing_machine_list: named_turing_machine COMMA turing_machine_list
 named_turing_machine: machine_name COLON turing_machine { std::cout << "Parsing Turing Machine " << $1 << " avec string "  << $3 << std::endl; }
 
 machine_name: STRING
-turing_machine: STRING
+turing_machine: BRACE_OPEN STATE_LIST COLON STRING BRACE_CLOSE { $$ = $4 ;}
 
 
 %%
-
-int main(){
-    try
-    {
-        yyparse();
-    }
-    catch(const std::runtime_error &e)
-    {
-    	std::cerr << "Bison error : " << e.what() << std::endl;
-    }
-    return 0;
-}
-

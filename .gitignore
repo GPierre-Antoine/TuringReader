@@ -2,5 +2,4 @@
 *.tab.c
 *.tab.h
 a.out
-bin/
-build/
+cmake-build-debug/
