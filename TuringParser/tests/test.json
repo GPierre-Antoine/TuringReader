@@ -1,0 +1,5 @@
+{
+  "A Then B": { "states":"turing machine 1" },
+  "OTHER": { "states":"turing machine 2" },
+  "Last": { "states":"turing machine 3" }
+}

@@ -2,4 +2,4 @@
 *.tab.c
 *.tab.h
 a.out
-Parser/bin/*
+cmake-build-debug/
