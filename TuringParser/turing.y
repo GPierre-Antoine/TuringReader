@@ -14,6 +14,7 @@ void yyerror (char const *s)
 
 %}
 
+%define parse.trace
 %union{
   char *aString;
 }
