@@ -6,11 +6,16 @@
 #include "turingparser.hpp"
 
 
-int main()
+int main(int argc, char **argv)
 {
     try
     {
-        yyparse();
+        for (std::size_t index = 1; index<argc; ++index)
+        {
+            std::cout << "Reading : " << argv[index] << std::endl;
+            freopen(argv[index], "r", stdin);
+            yyparse();
+        }
     }
     catch (const std::runtime_error & e)
     {
