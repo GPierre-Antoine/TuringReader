@@ -1,5 +1,10 @@
 {
   "A Then B": {
-    "states": "turing machine 1"
+    "states": [
+      "Q0",
+      "QA",
+      "QB",
+      "QF"
+    ]
   }
 }
