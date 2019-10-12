@@ -44,7 +44,16 @@ FLEX_STRING        {QUOTE}{NOQUOTE}{QUOTE}
 
 
 
-{FLEX_STRING}                      { yylval.aString = strdup(yytext); yield(STRING); }
+{FLEX_STRING}                      {
+char *ptr =  yytext;
+while (*(ptr+1) != 0)
+{
+    ptr+=1;
+}
+*ptr=0;
+yylval.aString = strdup(yytext+1);
+yield(STRING);
+}
 
 [.\n\t ]                           ;
 
